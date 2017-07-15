@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve slackapp
+After=network.target
+
+[Service]
+User=nginx
+Group=nginx
+WorkingDirectory=/opt/slackapp/lib
+Environment="PATH=/opt/slackapp/venv/bin"
+ExecStart=/opt/slackapp/venv/bin/uwsgi --ini /opt/slackapp/etc/slackapp.ini
+
+[Install]
+WantedBy=multi-user.target
