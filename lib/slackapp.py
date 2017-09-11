@@ -12,7 +12,7 @@ def rt():
     	abort(500)
     return jsonify({
 	"response_type": "in_channel",
-        "text": "https://rt.tss.its.nyu.edu/Ticket/Display.html?id=" + text
+        "text": "<Ticketing Link>" + text
     })
 
 def validate_token(request):
